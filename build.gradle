@@ -1,12 +1,16 @@
 
 buildscript {
+    // 전역변수 선언
     ext {
         springBootVersion = '2.1.7.RELEASE'
     }
+
+    // 각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을 것인지 정함
     repositories {
         mavenCentral()
         jcenter()
     }
+    // 프로젝트 개발에 필요한 의존성들을 선언
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -21,11 +25,13 @@ group 'com.springboot.practice'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
